@@ -6,6 +6,11 @@ require 'json'
 set :bind, 'dev.roopemerikukka.com'
 set :port, 9292
 
-get '/test' do
-  system("ls -la")
+#variables
+$repo_path = "/var/www/dev.roopemerikukka.com/"
+$repo_name = "aatu-web"
+
+post '/aatu-web' do
+  if File.exists?("#{$repo_path}/#{$repo_name}")
+    system("ls -la")
 end
