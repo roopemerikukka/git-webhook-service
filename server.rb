@@ -11,7 +11,7 @@ $repo_path = "/var/www/dev.roopemerikukka.com/"
 $repo_name = "aatu-web"
 $clone = "git@github.com:roopemerikukka/aatu-web.git"
 
-post '/aatu-web' do
+get '/aatu-web' do
   if File.exists?("#{$repo_path}/#{$repo_name}")
     system("git pull #{$clone}")
   end
