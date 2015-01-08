@@ -9,8 +9,10 @@ set :port, 9292
 #variables
 $repo_path = "/var/www/dev.roopemerikukka.com/"
 $repo_name = "aatu-web"
+$clone = "git@github.com:roopemerikukka/aatu-web.git"
 
 post '/aatu-web' do
   if File.exists?("#{$repo_path}/#{$repo_name}")
-    system("ls -la")
+    system("git pull #{$clone}")
+  end
 end
