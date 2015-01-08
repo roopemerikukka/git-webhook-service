@@ -2,6 +2,8 @@
 require 'sinatra'
 require 'json'
 
-get '/test' do
-  puts "it works!"
+class Server < Sinatra::Base
+  get '/test' do
+    puts "it works!"
+  end
 end
