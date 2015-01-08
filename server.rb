@@ -3,5 +3,5 @@ require 'sinatra'
 require 'json'
 
 get '/test' do
-  system("ln -ls")
+  system("ls -la")
 end
