@@ -16,7 +16,7 @@ get '/aatu-web' do
     system("cd #{$repo_path} && git pull")
     puts "pulled"
   else
-    system("cd #{$repo_path} && git clone #{$clone}")
+    system("cd ##{$repo_path}/#{$repo_name} && git clone #{$clone}")
     puts "cloned"
   end
 end
