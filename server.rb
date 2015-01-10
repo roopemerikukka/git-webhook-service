@@ -13,9 +13,11 @@ $clone = "git@github.com:roopemerikukka/aatu-web.git"
 
 get '/aatu-web' do
   if File.exists?("#{$repo_path}/#{$repo_name}")
+    system("cd #{$repo_path}")
     system("git pull")
     puts "pulled"
   else
+    system("cd #{$repo_path}")
     system("git clone #{$clone}")
     puts "cloned"
   end
