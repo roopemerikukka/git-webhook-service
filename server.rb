@@ -18,7 +18,7 @@ get '/repository/:name' do
     if item["name"] == params[:name]
 
       if File.exists?(item["path"])
-        system("cd #{item["path"]} && git pull")
+        system("cd #{item["path"]}/#{item["name"]} && git pull")
         puts "--- pull ---"
       else
         system("mkdir #{item["path"]} && cd #{item["path"]} && git clone #{item["clone-url"]}")
