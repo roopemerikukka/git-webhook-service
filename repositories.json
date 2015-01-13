@@ -1,0 +1,15 @@
+{
+  "repositories" : [
+    {
+      "name" : "aatu-web",
+      "path" : "/var/www/dev.roopemerikukka.com/aatu/",
+      "clone-url" : "git@github.com:roopemerikukka/aatu-web.git"
+    },
+
+    {
+      "name" : "koira",
+      "path" : "koirapath",
+      "clone-url" : "git@github.com:roopemerikukka/aatu-web.git"
+    }
+  ]
+}

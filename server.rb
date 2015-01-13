@@ -3,20 +3,32 @@ require 'sinatra'
 require 'json'
 
 #settings
-set :bind, 'dev.roopemerikukka.com'
+set :bind, 'localhost'
 set :port, 9292
 
-#variables
-$repo_path = "/var/www/dev.roopemerikukka.com/"
-$repo_name = "aatu-web"
-$clone = "git@github.com:roopemerikukka/aatu-web.git"
+get '/repository/:name' do
 
-get '/aatu-web' do
-  if File.exists?("#{$repo_path}/#{$repo_name}")
-    system("cd #{$repo_path}/#{$repo_name} && git pull")
-    puts "pulled"
-  else
-    system("cd #{$repo_path} && git clone #{$clone}")
-    puts "cloned"
+  puts "--- start ---"
+
+  file = File.read('repositories.json')
+  data = JSON.parse(file)
+
+  data["repositories"].each do |item|
+
+    if item["name"] == params[:name]
+
+      if File.exists?(item["path"])
+        system("cd #{item["path"]} && git pull")
+        puts "--- pull ---"
+      else
+        system("cd #{item["path"]} && git clone #{item["clone-url"]}")
+        puts "--- clone ---"
+      end
+
+    end
+
   end
+
+  puts "--- end ---"
+  
 end
