@@ -21,7 +21,7 @@ get '/repository/:name' do
         system("cd #{item["path"]}/#{item["name"]} && git pull")
         puts "--- pull ---"
       else
-        system("mkdir #{item["path"]} && cd #{item["path"]} && git clone #{item["clone-url"]}")
+        system("cd #{item["path"]} && git clone #{item["clone-url"]}")
         puts "--- clone ---"
       end
 
