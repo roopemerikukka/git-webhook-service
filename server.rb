@@ -17,7 +17,7 @@ get '/repository/:name' do
 
     if item["name"] == params[:name]
 
-      if File.exists?(item["path"])
+      if File.exists?("item["path"]/item["name"]")
         system("cd #{item["path"]}/#{item["name"]} && git pull")
         puts "--- pull ---"
       else
