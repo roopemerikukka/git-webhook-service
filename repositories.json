@@ -1,9 +1,9 @@
 {
   "repositories" : [
     {
-      "name" : "aatu-web",
-      "path" : "/var/www/dev.roopemerikukka.com/",
-      "clone-url" : "git@github.com:roopemerikukka/aatu-web.git"
+      "name" : "repository-name",
+      "path" : "/absolute/directory/to/repository/",
+      "clone-url" : "git@github.com:roopemerikukka/git-webhook-service.git"
     }
   ]
 }

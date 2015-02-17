@@ -6,7 +6,7 @@ require 'json'
 set :bind, 'localhost'
 set :port, 9292
 
-get '/repository/:name' do
+post '/repository/:name' do
 
   puts "--- start ---"
 
